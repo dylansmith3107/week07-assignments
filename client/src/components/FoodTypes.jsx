@@ -16,12 +16,12 @@ export default function FoodTypes() {
 
   return (
     <>
-      <section>
+      <section className="food-type-section">
         {foodTypes.map((foodType) => {
           return (
             <div key={foodType.id} className="food-type">
               <Link to={`/view-recipes/${foodType.food_type_name}`}>
-                {foodType.food_type_name}
+                <h3>{foodType.food_type_name}</h3>
               </Link>
             </div>
           );

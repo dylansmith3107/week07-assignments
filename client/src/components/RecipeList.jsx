@@ -30,7 +30,10 @@ export default function RecipeList() {
               <h2>{recipe.title}</h2>
               <h3>By {recipe.author}</h3>
               <p>Likes: {recipe.likes}</p>
-              <button onClick={() => setIsVisible(!isVisible)}>
+              <button
+                className="recipe-list-btn"
+                onClick={() => setIsVisible(!isVisible)}
+              >
                 Show more/less
               </button>
               {isVisible && <p>{recipe.content}</p>}

@@ -41,6 +41,7 @@ export default function NewRecipeForm() {
   return (
     <>
       <main className="new-recipe-form">
+        <h2>Add a new recipe for all to see</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="foodTypeId">
             What food category is your recipe?{" "}
@@ -78,15 +79,21 @@ export default function NewRecipeForm() {
             onChange={handleFormChanges}
           />
           <label htmlFor="content">Tell us your recipe: </label>
-          <input
-            type="text"
+          <textarea
+            className="recipe-form-content"
+            id="content"
             name="content"
+            rows={8}
+            cols={100}
+            placeholder="Include ingredients and easy to follow
+            instructions"
             required
-            placeholder="Include ingredients and easy to follow instructions "
             value={formValues.content}
             onChange={handleFormChanges}
           />
-          <button type="submit">Submit</button>
+          <button className="recipe-submit-btn" type="submit">
+            Submit
+          </button>
         </form>
       </main>
     </>
