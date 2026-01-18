@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 
 export default function RecipeList() {
   let { foodType } = useParams();
@@ -13,19 +13,31 @@ export default function RecipeList() {
       setRecipes(data);
     }
     fetchRecipes();
+
+    const pollingInterval = setInterval(fetchRecipes, 5000);
+
+    return () => clearInterval(pollingInterval);
   }, [foodType]);
+
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <>
-      {recipes.map((recipe) => {
-        return (
-          <div className="recipe-div" key={recipe.id}>
-            <h2>{recipe.title}</h2>
-            <h3>By {recipe.author}</h3>
-            <p>Likes: {recipe.likes}</p>
-          </div>
-        );
-      })}
+      <main className="recipe-list">
+        {recipes.map((recipe) => {
+          return (
+            <div className="recipe-div" key={recipe.id}>
+              <h2>{recipe.title}</h2>
+              <h3>By {recipe.author}</h3>
+              <p>Likes: {recipe.likes}</p>
+              <button onClick={() => setIsVisible(!isVisible)}>
+                Show more/less
+              </button>
+              {isVisible && <p>{recipe.content}</p>}
+            </div>
+          );
+        })}
+      </main>
     </>
   );
 }

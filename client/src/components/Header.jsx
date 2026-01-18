@@ -7,6 +7,7 @@ export default function Header() {
         <h1>Bakery recipes yayyy</h1>
         <nav>
           <Link to="/">Home</Link>
+          <Link to={`/add-recipe`}>Add new recipe</Link>
         </nav>
       </header>
     </>

@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to the root route. GET comfy!" });
 });
 
-app.get("/food-type", async (req, res) => {
+app.get("/food-types", async (req, res) => {
   const query = await db.query(`SELECT id, food_type_name FROM food_type`);
   res.json(query.rows);
 });
@@ -28,4 +28,12 @@ app.get("/recipes/:foodType", async (req, res) => {
     [foodType]
   );
   res.json(query.rows);
+});
+
+app.post("/new-post", (req, res) => {
+  const { title, author, content, likes, foodTypeId } = req.body.formValues;
+  const query = db.query(
+    `INSERT INTO recipes(title, author, content, likes, food_type_id) VALUES($1, $2, $3, $4, $5) RETURNING *`,
+    [title, author, content, likes, foodTypeId]
+  );
 });

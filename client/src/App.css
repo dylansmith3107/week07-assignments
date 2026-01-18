@@ -3,3 +3,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 3rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

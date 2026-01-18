@@ -6,7 +6,7 @@ export default function FoodTypes() {
 
   useEffect(() => {
     async function fetchFoodType() {
-      const response = await fetch("http://localhost:8080/food-type");
+      const response = await fetch("http://localhost:8080/food-types");
       const data = await response.json();
       console.log(data);
       setFoodTypes(data);
@@ -19,8 +19,8 @@ export default function FoodTypes() {
       <section>
         {foodTypes.map((foodType) => {
           return (
-            <div key={foodType.id} className="food-type-div">
-              <Link to={`/${foodType.food_type_name}`}>
+            <div key={foodType.id} className="food-type">
+              <Link to={`/view-recipes/${foodType.food_type_name}`}>
                 {foodType.food_type_name}
               </Link>
             </div>
