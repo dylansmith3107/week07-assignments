@@ -5,6 +5,12 @@
   font-family: monospace;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 78vh;
+}
+
 header {
   display: flex;
   flex-wrap: wrap;
@@ -14,12 +20,34 @@ header {
   position: sticky;
   background-color: saddlebrown;
   color: darkorange;
+  position: sticky;
+  top: 0;
+}
+
+.text-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 4rem;
+  height: auto;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  font-size: large;
+}
+
+.header-links {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-links:hover {
+  text-decoration: underline;
 }
 
 .home-page {
@@ -43,17 +71,26 @@ nav {
   gap: 1rem;
   justify-content: center;
   padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .food-type {
   width: 25%;
-  height: 18vh;
+  height: 12vh;
   background-color: teal;
   text-align: center;
   align-content: center;
-  background-color: saddlebrown;
+  background-color: darkorange;
   border-radius: 16px;
+  font-size: x-large;
+}
+
+.food-type-links {
+  text-decoration: none;
+  color: saddlebrown;
+}
+
+.food-type-links:hover {
+  text-decoration: underline;
 }
 
 .new-recipe-form {
@@ -107,6 +144,7 @@ input {
   cursor: pointer;
   border-radius: 10px;
   border: 1px solid black;
+  background-color: seashell;
 }
 
 .recipe-list {
@@ -132,6 +170,10 @@ input {
 .recipe-list-btn {
   width: 10rem;
   height: 1.8rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: seashell;
 }
 
 footer {
@@ -139,8 +181,22 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 13.5vh;
+  height: 11vh;
   width: 100%;
   background-color: saddlebrown;
   color: darkorange;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .food-type {
+    width: 15%;
+    height: 18vh;
+    background-color: teal;
+    text-align: center;
+    align-content: center;
+    background-color: darkorange;
+    border-radius: 16px;
+    font-size: x-large;
+  }
 }

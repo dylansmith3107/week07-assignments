@@ -4,10 +4,21 @@ export default function Header() {
   return (
     <>
       <header>
-        <h1>Bakery recipes yayyy</h1>
+        <div className="text-logo">
+          <img
+            className="logo-img"
+            src="https://static.vecteezy.com/system/resources/previews/042/979/665/non_2x/cartoon-mixing-bowl-clipart-free-png.png"
+            alt="Logo of a cartoon bowl and whisk"
+          />
+          <h1>Bake It Easy</h1>
+        </div>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to={`/add-recipe`}>Add new recipe</Link>
+          <Link className="header-links" to="/">
+            Home
+          </Link>
+          <Link className="header-links" to={`/add-recipe`}>
+            Add new recipe
+          </Link>
         </nav>
       </header>
     </>

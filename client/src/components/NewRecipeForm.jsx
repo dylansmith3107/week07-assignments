@@ -83,7 +83,7 @@ export default function NewRecipeForm() {
             className="recipe-form-content"
             id="content"
             name="content"
-            rows={8}
+            rows={24}
             cols={100}
             placeholder="Include ingredients and easy to follow
             instructions"
