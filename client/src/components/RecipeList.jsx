@@ -7,7 +7,9 @@ export default function RecipeList() {
 
   useEffect(() => {
     async function fetchRecipes() {
-      const response = await fetch(`http://localhost:8080/recipes/${foodType}`);
+      const response = await fetch(
+        `https://week07-assignments.onrender.com/${foodType}`,
+      );
       const data = await response.json();
       console.log(data);
       setRecipes(data);

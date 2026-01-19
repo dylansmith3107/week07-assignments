@@ -6,7 +6,9 @@ export default function FoodTypes() {
 
   useEffect(() => {
     async function fetchFoodType() {
-      const response = await fetch("http://localhost:8080/food-types");
+      const response = await fetch(
+        "https://week07-assignments.onrender.com/food-types",
+      );
       const data = await response.json();
       console.log(data);
       setFoodTypes(data);
